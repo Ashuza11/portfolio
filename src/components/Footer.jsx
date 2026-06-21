@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { personal } from '../data/portfolio'
 import './Footer.css'
 
@@ -6,11 +7,12 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <span className="mono accent">ash.dev</span>
-        <span className="footer-copy">© {new Date().getFullYear()} {personal.name}. All rights reserved.</span>
+        <span className="footer-copy">© {new Date().getFullYear()} {personal.name}</span>
         <div className="footer-links">
-          {Object.entries(personal.social).map(([name, url]) => (
-            <a key={name} href={url} target="_blank" rel="noopener noreferrer">{name}</a>
-          ))}
+          <Link to="/projects">Projects</Link>
+          <Link to="/experience">Experience</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
     </footer>

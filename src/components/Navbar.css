@@ -31,7 +31,19 @@
   transition: color 0.2s;
 }
 
-.navbar-links a:hover { color: var(--accent); }
+.navbar-links a:hover,
+.navbar-links a.active { color: var(--accent); }
+
+.nav-cv {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px 12px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.nav-cv:hover { border-color: var(--accent); color: var(--accent); }
 
 .navbar-actions {
   display: flex;

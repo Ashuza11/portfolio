@@ -1,0 +1,54 @@
+.exp-timeline { display: flex; flex-direction: column; gap: 0; }
+
+.exp-entry {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.exp-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 20px;
+}
+
+.exp-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.exp-line {
+  width: 2px;
+  flex: 1;
+  background: var(--border);
+  min-height: 32px;
+  margin-top: 4px;
+}
+
+.exp-entry:last-child .exp-line { display: none; }
+
+.exp-body {
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.exp-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.exp-period { font-size: 0.75rem; color: var(--text-2); }
+.exp-role   { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+.exp-org    { font-size: 0.85rem; margin-bottom: 2px; }
+.exp-loc    { font-size: 0.75rem; color: var(--text-2); margin-bottom: 10px; }
+.exp-desc   { font-size: 0.875rem; color: var(--text-2); line-height: 1.7; }
