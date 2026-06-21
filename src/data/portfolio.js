@@ -12,6 +12,7 @@ export const personal = {
   email: 'ashuzamh@gmail.com',
   phone: '+250 826 722 88',
   available: true,
+  avatar: '/images/Mashuza.jpeg',
   bio: "I'm a Full Stack Engineer building AI-powered products for African education and communities. From GPU backends running Whisper STT to offline-first PWAs in African languages — I work across the full stack and ship things that matter.",
   cv: '/Ash_cv.pdf',
   social: {
@@ -194,6 +195,24 @@ export const experience = [
 ]
 
 export const gallery = [
-  // Add entries as:
-  // { src: '/gallery/filename.jpg', caption: 'Event name · Location · Year', category: 'workshop|conference|training' }
+  { src: '/gallery/_MG_0143.jpg', caption: 'Deep Learning Indaba · Dakar, Senegal · 2024', category: 'conference' },
+  { src: '/gallery/_MG_0168.jpg', caption: 'Deep Learning Indaba · Dakar, Senegal · 2024', category: 'conference' },
+  { src: '/gallery/PXL_20240823_101621803.MP.jpg', caption: 'Deep Learning Indaba · 2024', category: 'conference' },
+  { src: '/gallery/PXL_20240823_105348875.PORTRAIT.jpg', caption: 'Deep Learning Indaba · 2024', category: 'conference' },
+  { src: '/gallery/PXL_20240612_103406759.NIGHT.jpg', caption: 'STEM Training Session · DRC · Jun 2024', category: 'training' },
+  { src: '/gallery/post1.jpg', caption: 'STEM Training Session · DRC · Jun 2024', category: 'training' },
+  { src: '/gallery/PXL_20240426_115810277.jpg', caption: 'Microsoft AI Workshop · DRC · Apr 2024', category: 'workshop' },
+  { src: '/gallery/IMG_20240426_135513_901.jpg', caption: 'Microsoft AI Workshop · DRC · Apr 2024', category: 'workshop' },
+  { src: '/gallery/PXL_20230825_111031412.jpg', caption: 'Tech Expo · DRC · Aug 2023', category: 'conference' },
+  { src: '/gallery/photo_2023-12-13_00-53-26.jpg', caption: 'Community Event · DRC · Dec 2023', category: 'workshop' },
+  { src: '/gallery/PXL_20230427_103631815.MP.jpg', caption: 'AI Training Session · DRC · Apr 2023', category: 'training' },
+  { src: '/gallery/PXL_20230401_110700928.NIGHT.jpg', caption: 'Tech Event · DRC · Apr 2023', category: 'workshop' },
+  { src: '/gallery/PXL_20230329_101836023.jpg', caption: 'MLSA Community Session · DRC · Mar 2023', category: 'workshop' },
+  { src: '/gallery/PXL_20230322_085902917.PORTRAIT.jpg', caption: 'MLSA Workshop · Goma, DRC · Mar 2023', category: 'workshop' },
+  { src: '/gallery/PXL_20230322_090746151.jpg', caption: 'MLSA Workshop · Goma, DRC · Mar 2023', category: 'workshop' },
+  { src: '/gallery/5841354483081266970_121.jpg', caption: 'Community Tech Event · DRC', category: 'workshop' },
+  { src: '/gallery/5845858082708636792_121.jpg', caption: 'Community Tech Event · DRC', category: 'workshop' },
+  { src: '/gallery/5845858082708636794_121.jpg', caption: 'Community Tech Event · DRC', category: 'workshop' },
+  { src: '/gallery/poster.png', caption: 'Event Poster · DRC', category: 'conference' },
+  { src: '/gallery/event_resume.png', caption: 'Event Flyer · DRC', category: 'workshop' },
 ]

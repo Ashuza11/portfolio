@@ -3,7 +3,7 @@ import { personal } from '../data/portfolio'
 import './Hero.css'
 
 export default function Hero() {
-  const [roleIdx, setRoleIdx]   = useState(0)
+  const [roleIdx, setRoleIdx]     = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [deleting, setDeleting]   = useState(false)
 
@@ -28,6 +28,8 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="container hero-inner">
+
+        {/* Left — text */}
         <div className="hero-text">
           <div className="hero-badge">
             <span className="badge-dot" />
@@ -35,21 +37,24 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-name">
-            {personal.name.split(' ').map((w, i) => (
-              <span key={i}>{w} </span>
-            ))}
+            Muhigiri <span className="accent">Ashuza</span>
           </h1>
 
           <h2 className="hero-role">
-            <span className="accent typewriter">{displayed}</span>
+            <span className="typewriter">{displayed}</span>
             <span className="cursor" />
           </h2>
 
           <p className="hero-bio">{personal.bio}</p>
 
+          <div className="hero-quick">
+            <span>📍 {personal.location}</span>
+            <span>✉️ {personal.email}</span>
+          </div>
+
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary">View Projects</a>
-            <a href="#contact" className="btn btn-outline">Get in Touch</a>
+            <a href="#contact"  className="btn btn-outline">Get in Touch</a>
             <a href={personal.cv} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
               Download CV
             </a>
@@ -64,15 +69,31 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-avatar">
-          <div className="avatar-ring">
-            <div className="avatar-initials">MA</div>
+        {/* Right — photo */}
+        <div className="hero-photo-wrap">
+          <div className="hero-photo-ring">
+            <img
+              src="/images/Mashuza.jpeg"
+              alt="Muhigiri Ashuza Albin"
+              className="hero-photo"
+            />
           </div>
-          <div className="avatar-location">
-            <span>📍</span> {personal.location}
+          <div className="hero-photo-stats">
+            {personal.stats.slice(0, 2).map(s => (
+              <div key={s.label} className="mini-stat">
+                <span className="mini-stat-val accent mono">{s.value}{s.suffix}</span>
+                <span className="mini-stat-label">{s.label}</span>
+              </div>
+            ))}
           </div>
         </div>
+
       </div>
+
+      {/* Scroll hint */}
+      <a href="#about" className="scroll-hint" aria-label="Scroll down">
+        <span className="scroll-arrow" />
+      </a>
     </section>
   )
 }

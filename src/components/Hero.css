@@ -1,68 +1,75 @@
 .hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding-top: var(--nav-h);
+  position: relative;
 }
 
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 64px;
+  gap: 72px;
   padding-top: 48px;
-  padding-bottom: 48px;
+  padding-bottom: 80px;
 }
 
+/* ── Availability badge ── */
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--success);
-  background: rgba(16,185,129,0.1);
-  border: 1px solid rgba(16,185,129,0.3);
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.25);
   border-radius: 999px;
   padding: 5px 14px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .badge-dot {
-  width: 8px; height: 8px;
+  width: 7px; height: 7px;
   background: var(--success);
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.75); }
 }
 
+/* ── Name ── */
 .hero-name {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 12px;
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
 }
 
+/* ── Typewriter ── */
 .hero-role {
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
   font-weight: 500;
   color: var(--text-2);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   min-height: 2rem;
   display: flex;
   align-items: center;
   gap: 2px;
 }
 
-.typewriter { font-family: var(--font-mono); }
+.typewriter { font-family: var(--font-mono); color: var(--accent); }
 
 .cursor {
   display: inline-block;
-  width: 2px;
-  height: 1.2em;
+  width: 2px; height: 1.1em;
   background: var(--accent);
   animation: blink 1s step-end infinite;
   margin-left: 2px;
@@ -70,90 +77,134 @@
 
 @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
 
+/* ── Bio ── */
 .hero-bio {
   color: var(--text-2);
-  max-width: 520px;
-  margin-bottom: 32px;
-  font-size: 1rem;
-  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 18px;
+  font-size: 0.97rem;
+  line-height: 1.75;
 }
 
+/* ── Quick info ── */
+.hero-quick {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--text-2);
+  margin-bottom: 28px;
+}
+
+/* ── CTA row ── */
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 32px;
+  gap: 10px;
+  margin-bottom: 28px;
 }
 
-.hero-social {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
+/* ── Social links ── */
+.hero-social { display: flex; gap: 16px; flex-wrap: wrap; }
 
 .social-link {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-2);
   text-transform: capitalize;
-  transition: color 0.2s;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  padding-bottom: 1px;
 }
 
-.social-link:hover { color: var(--accent); }
+.social-link:hover { color: var(--accent); border-color: var(--accent); }
 
-/* Avatar */
-.hero-avatar {
+/* ── Photo ── */
+.hero-photo-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
-.avatar-ring {
-  width: 200px;
-  height: 200px;
+.hero-photo-ring {
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  background: conic-gradient(var(--accent), var(--secondary), var(--accent));
   padding: 3px;
-  animation: spin 8s linear infinite;
+  background: conic-gradient(from 0deg, var(--accent), var(--secondary), var(--accent));
+  animation: spin 10s linear infinite;
+  flex-shrink: 0;
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.avatar-initials {
+.hero-photo {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: var(--surface);
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  animation: spin 10s linear infinite reverse;
+}
+
+.hero-photo-stats {
   display: flex;
+  gap: 24px;
+}
+
+.mini-stat {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  animation: spin 8s linear infinite reverse;
+  gap: 2px;
 }
 
-.avatar-location {
-  font-size: 0.85rem;
-  color: var(--text-2);
+.mini-stat-val  { font-size: 1.4rem; font-weight: 700; }
+.mini-stat-label { font-size: 0.7rem; color: var(--text-2); text-align: center; }
+
+/* ── Scroll hint ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
+.scroll-arrow {
+  display: block;
+  width: 20px; height: 20px;
+  border-right: 2px solid var(--text-2);
+  border-bottom: 2px solid var(--text-2);
+  transform: rotate(45deg);
+  animation: bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
+  50%      { transform: rotate(45deg) translateY(6px); opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 40px;
   }
 
-  .hero-text { order: 2; }
-  .hero-avatar { order: 1; }
+  .hero-text  { order: 2; }
+  .hero-photo-wrap { order: 1; }
 
-  .hero-badge { margin: 0 auto 20px; }
-  .hero-bio   { margin-left: auto; margin-right: auto; }
-  .hero-cta   { justify-content: center; }
+  .hero-badge  { margin: 0 auto 24px; }
+  .hero-bio    { margin-left: auto; margin-right: auto; }
+  .hero-quick  { justify-content: center; }
+  .hero-cta    { justify-content: center; }
   .hero-social { justify-content: center; }
 
-  .avatar-ring { width: 140px; height: 140px; }
-  .avatar-initials { font-size: 2rem; }
+  .hero-photo-ring { width: 180px; height: 180px; }
 }
