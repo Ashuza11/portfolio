@@ -2,12 +2,6 @@ import { personal } from '../data/portfolio'
 import './ContactPage.css'
 
 export default function ContactPage() {
-  const handleSubmit = e => {
-    e.preventDefault()
-    const d = Object.fromEntries(new FormData(e.target))
-    window.location.href = `mailto:${personal.email}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(`From: ${d.name}\n\n${d.message}`)}`
-  }
-
   return (
     <div className="page-wrap">
       <div className="container">
@@ -16,24 +10,15 @@ export default function ContactPage() {
           <p className="page-sub">Have a project in mind or want to collaborate? I would love to hear from you.</p>
         </div>
 
-        <div className="contact-layout">
-          <form className="contact-form card reveal" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Name</label>
-              <input name="name" type="text" required placeholder="Your name" />
-            </div>
-            <div className="form-group">
-              <label>Subject</label>
-              <input name="subject" type="text" required placeholder="What is this about?" />
-            </div>
-            <div className="form-group">
-              <label>Message</label>
-              <textarea name="message" rows={6} required placeholder="Tell me more..." />
-            </div>
-            <button type="submit" className="btn btn-primary">Send Message</button>
-          </form>
+        <div className="contact-direct reveal">
+          <div className="contact-intro card">
+            <p className="section-label">Direct contact</p>
+            <h2>Let’s build something meaningful.</h2>
+            <p>Email is the best way to reach me for projects, research, speaking, or community collaboration.</p>
+            <a href={`mailto:${personal.email}`} className="btn btn-primary">Email me</a>
+          </div>
 
-          <div className="contact-side reveal">
+          <div className="contact-side">
             <div className="sidebar-box">
               <h4 className="sidebar-heading">Direct</h4>
               <dl className="info-list">
@@ -43,7 +28,7 @@ export default function ContactPage() {
                 </div>
                 <div className="info-row">
                   <dt>Phone</dt>
-                  <dd><a href={`tel:${personal.phone}`} className="accent">{personal.phone}</a></dd>
+                  <dd><a href={`tel:${personal.phone.replace(/\s/g, '')}`} className="accent">{personal.phone}</a></dd>
                 </div>
                 <div className="info-row">
                   <dt>Location</dt>

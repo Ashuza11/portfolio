@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { personal, projects, experience, gallery } from '../data/portfolio'
-import GallerySlideshow from '../components/GallerySlideshow'
+import { personal, projects, experience, engagements, skills } from '../data/portfolio'
 import './HomePage.css'
 
 function Typewriter({ words }) {
@@ -74,7 +73,7 @@ export default function HomePage() {
               <Link to="/projects" className="btn btn-primary">View Projects</Link>
               <Link to="/contact"  className="btn btn-outline">Get in Touch</Link>
               <a href={personal.cv} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                Download CV
+                View CV
               </a>
             </div>
           </div>
@@ -111,10 +110,10 @@ export default function HomePage() {
                     <span className="tag">{p.category}</span>
                     <div className="feat-links">
                       {p.github && (
-                        <a href={p.github} target="_blank" rel="noopener noreferrer" className="icon-link">GH</a>
+                        <a href={p.github} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label={`View ${p.title} source code on GitHub`}>GitHub</a>
                       )}
                       {p.live && (
-                        <a href={p.live} target="_blank" rel="noopener noreferrer" className="icon-link accent">↗</a>
+                        <a href={p.live} target="_blank" rel="noopener noreferrer" className="icon-link accent" aria-label={`Visit ${p.title}`}>Visit ↗</a>
                       )}
                     </div>
                   </div>
@@ -131,6 +130,20 @@ export default function HomePage() {
             </div>
           </section>
 
+          <section className="home-section reveal" aria-labelledby="skills-title">
+            <h2 className="home-section-title" id="skills-title">Skills</h2>
+            <div className="home-skills-grid">
+              {skills.map(group => (
+                <div className="home-skill-group" key={group.category}>
+                  <h3>{group.category}</h3>
+                  <div className="feat-tech">
+                    {group.items.map(item => <span className="tag" key={item}>{item}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Recent Experience */}
           <section className="home-section reveal">
             <div className="section-row-head">
@@ -140,26 +153,37 @@ export default function HomePage() {
             <div className="recent-exp">
               {recentExp.map(e => (
                 <div key={e.id} className="exp-row card">
-                  <div className="exp-period mono">{e.period}</div>
-                  <div className="exp-content">
-                    <h3 className="exp-role">{e.role}</h3>
-                    <p className="exp-org accent">{e.org}</p>
-                    <p className="exp-loc">{e.location}</p>
-                    <p className="exp-desc">{e.description}</p>
+                  <div className="home-exp-period mono">{e.period}</div>
+                  <div className="home-exp-content">
+                    <h3 className="home-exp-role">{e.role}</h3>
+                    <p className="home-exp-org accent">{e.org}</p>
+                    <p className="home-exp-loc">{e.location}</p>
+                    <p className="home-exp-desc">{e.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Gallery preview */}
-          {gallery.length > 0 && (
+          {/* Facilitation preview */}
+          {engagements.length > 0 && (
             <section className="home-section reveal">
               <div className="section-row-head">
-                <h2 className="home-section-title">Gallery</h2>
-                <Link to="/gallery" className="see-all">See all photos →</Link>
+                <h2 className="home-section-title">Facilitation & Mentorship</h2>
+                <Link to="/facilitation" className="see-all">Explore the programs →</Link>
               </div>
-              <GallerySlideshow images={gallery} height={400} />
+              <div className="home-events">
+                {engagements.slice(0, 3).map(event => (
+                  <Link to="/facilitation" className="home-event-card" key={event.id}>
+                    <img src={event.images[0]} alt="" loading="lazy" />
+                    <div>
+                      <span className="mono accent">{event.year} · {event.format}</span>
+                      <h3>{event.title}</h3>
+                      <p>{event.audience}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </section>
           )}
 

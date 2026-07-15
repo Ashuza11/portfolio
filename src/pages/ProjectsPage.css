@@ -17,24 +17,46 @@
 .filter-bar { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
 
 .filter-btn {
-  padding: 7px 20px;
-  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 8px 14px;
+  border-radius: 999px;
   border: 1px solid var(--border);
   background: transparent;
   color: var(--text-2);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color .2s, background .2s, border-color .2s, transform .2s;
 }
 
 .filter-btn:hover,
 .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
+.filter-btn:hover { transform: translateY(-1px); }
+
+.filter-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font: 500 .68rem var(--font-mono);
+}
+
+.filter-btn.active .filter-count { background: rgba(255,255,255,.2); color: #fff; }
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 20px;
 }
+
+.not-found-action { margin-top: 24px; }
 
 .proj-card { display: flex; flex-direction: column; gap: 12px; }
 
