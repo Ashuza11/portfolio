@@ -33,6 +33,8 @@
   border-radius: calc(var(--radius) + 6px);
   background: var(--surface);
   box-shadow: 0 24px 70px rgba(0,0,0,.12);
+  content-visibility: auto;
+  contain-intrinsic-size: 430px;
 }
 
 .event-card:nth-child(even) .event-mosaic { order: 2; }

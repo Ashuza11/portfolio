@@ -6,7 +6,7 @@ function EventImages({ event }) {
     <div className={`event-mosaic event-mosaic-${Math.min(event.images.length, 5)}`} role="group" aria-label={`Photos from ${event.title}`}>
       {event.images.map(src => (
         <figure className="event-photo" key={src}>
-          <img src={src} alt={`${event.title} participants and activities`} loading="lazy" />
+          <img src={src} alt={`${event.title} participants and activities`} loading="lazy" decoding="async" />
         </figure>
       ))}
     </div>
@@ -19,7 +19,7 @@ export default function FacilitationPage() {
       <div className="container">
         <header className="page-header facilitation-header">
           <p className="section-label">Community learning</p>
-          <h1 className="page-title">Facilitation & Mentorship</h1>
+          <h1 className="page-title">Facilitation and Mentorship</h1>
           <p className="page-sub">Bootcamps, workshops, and community programs I organized to help emerging technologists turn curiosity into practical skills and opportunity.</p>
           <div className="facilitation-summary" aria-label="Facilitation impact">
             <span><strong>9</strong> programs</span>

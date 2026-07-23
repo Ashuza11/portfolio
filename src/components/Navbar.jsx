@@ -7,7 +7,7 @@ const links = [
   { label: 'About',      to: '/#about' },
   { label: 'Projects',   to: '/projects' },
   { label: 'Experience', to: '/experience' },
-  { label: 'Mentorship', to: '/facilitation' },
+  { label: 'Community', to: '/facilitation' },
   { label: 'Contact',    to: '/contact' },
   { label: 'CV',         to: personal.cv, external: true },
 ]

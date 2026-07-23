@@ -44,7 +44,7 @@ export default function HomePage() {
         <div className="container hero-row">
           <div className="hero-photo-col">
             <div className="hero-ring">
-              <img src={personal.avatar} alt={personal.name} className="hero-img" />
+              <img src={personal.avatar} alt={personal.name} className="hero-img" width="600" height="600" fetchPriority="high" decoding="async" />
             </div>
             {personal.available && (
               <div className="avail-badge">
@@ -169,13 +169,13 @@ export default function HomePage() {
           {engagements.length > 0 && (
             <section className="home-section reveal">
               <div className="section-row-head">
-                <h2 className="home-section-title">Facilitation & Mentorship</h2>
+                <h2 className="home-section-title">Facilitation and Mentorship</h2>
                 <Link to="/facilitation" className="see-all">Explore the programs →</Link>
               </div>
               <div className="home-events">
                 {engagements.slice(0, 3).map(event => (
                   <Link to="/facilitation" className="home-event-card" key={event.id}>
-                    <img src={event.images[0]} alt="" loading="lazy" />
+                    <img src={event.images[0]} alt="" loading="lazy" decoding="async" />
                     <div>
                       <span className="mono accent">{event.year} · {event.format}</span>
                       <h3>{event.title}</h3>
@@ -218,7 +218,7 @@ export default function HomePage() {
             <dl className="info-list">
               {Object.entries(personal.socialHandles).map(([name, handle]) => (
                 <div className="info-row" key={name}>
-                  <dt>{name.charAt(0).toUpperCase() + name.slice(1)}</dt>
+                  <dt>{name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</dt>
                   <dd>
                     <a href={personal.social[name]} target="_blank" rel="noopener noreferrer" className="accent">
                       {handle}

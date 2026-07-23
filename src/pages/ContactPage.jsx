@@ -42,7 +42,7 @@ export default function ContactPage() {
               <dl className="info-list">
                 {Object.entries(personal.socialHandles).map(([name, handle]) => (
                   <div className="info-row" key={name}>
-                    <dt>{name.charAt(0).toUpperCase() + name.slice(1)}</dt>
+                    <dt>{name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</dt>
                     <dd>
                       <a href={personal.social[name]} target="_blank" rel="noopener noreferrer" className="accent">
                         {handle}

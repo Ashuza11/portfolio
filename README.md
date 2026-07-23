@@ -33,6 +33,8 @@ npm run preview
 
 Edit `src/data/portfolio.js` to update personal information, skills, projects, experience, and facilitated programs. Public assets belong in `public/`. Keep event images at or below 1920 pixels on their longest edge and compress them for the web.
 
+The Experience page supports an optional `image` field for every item in the `highlights` collection. Add each new image to `public/highlights/`, then set the corresponding item to a path such as `/highlights/indaba-2026.webp`. Until an image is added, the site displays a designed placeholder.
+
 ## Deployment
 
 The included `netlify.toml` builds the site with `npm run build`, publishes `dist`, and configures the history fallback required by React Router.

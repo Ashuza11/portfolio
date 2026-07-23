@@ -5,7 +5,7 @@ import './ProjectsPage.css'
 const FILTERS = [
   { value: 'All', label: 'All projects' },
   { value: 'AI', label: 'AI systems' },
-  { value: 'Full Stack', label: 'Full-stack' },
+  { value: 'Full Stack', label: 'Full stack' },
 ]
 
 export default function ProjectsPage() {
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <div className="container">
         <div className="page-header">
           <h1 className="page-title">Projects</h1>
-          <p className="page-sub">Things I have built — production systems, AI platforms, and community tools.</p>
+          <p className="page-sub">Things I have built. Production systems, AI platforms, and community tools.</p>
         </div>
 
         <div className="filter-bar" role="group" aria-label="Filter projects">

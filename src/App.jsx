@@ -25,17 +25,17 @@ function ScrollToTop() {
 }
 
 const pageMeta = {
-  '/': ['Muhigiri Ashuza — Full Stack Engineer', 'Full Stack and AI engineer building products for African education and communities.'],
-  '/projects': ['Projects — Muhigiri Ashuza', 'AI platforms, production systems, and community tools built by Muhigiri Ashuza.'],
-  '/experience': ['Experience — Muhigiri Ashuza', 'Professional engineering and developer-community experience.'],
-  '/facilitation': ['Facilitation & Mentorship — Muhigiri Ashuza', 'Bootcamps, workshops, and mentorship programs organized for emerging technologists.'],
-  '/contact': ['Contact — Muhigiri Ashuza', 'Contact Muhigiri Ashuza about engineering projects and collaboration.'],
+  '/': ['Muhigiri Ashuza | Full Stack Engineer', 'Full Stack and AI engineer building products for African education and communities.'],
+  '/projects': ['Projects | Muhigiri Ashuza', 'AI platforms, production systems, and community tools built by Muhigiri Ashuza.'],
+  '/experience': ['Experience | Muhigiri Ashuza', 'Professional engineering and developer community experience.'],
+  '/facilitation': ['Facilitation and Mentorship | Muhigiri Ashuza', 'Bootcamps, workshops, and mentorship programs organized for emerging technologists.'],
+  '/contact': ['Contact | Muhigiri Ashuza', 'Contact Muhigiri Ashuza about engineering projects and collaboration.'],
 }
 
 function RouteMeta() {
   const { pathname } = useLocation()
   useEffect(() => {
-    const [title, description] = pageMeta[pathname] || ['Page not found — Muhigiri Ashuza', 'The requested page could not be found.']
+    const [title, description] = pageMeta[pathname] || ['Page not found | Muhigiri Ashuza', 'The requested page could not be found.']
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', description)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title)
