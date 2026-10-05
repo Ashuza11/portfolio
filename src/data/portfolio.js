@@ -54,7 +54,7 @@ export const personal = {
 export const skills = [
   { category: 'Backend',   items: ['FastAPI', 'Flask', 'Django', 'Node.js', 'REST APIs', 'WebSockets'] },
   { category: 'Frontend',  items: ['React 19', 'Next.js 15', 'Vite', 'TypeScript', 'Tailwind CSS', 'CSS Custom Properties'] },
-  { category: 'Mobile',    items: ['React Native (Planned)', 'PWA', 'Offline First'] },
+  { category: 'Mobile',    items: ['React Native', 'Expo', 'PWA', 'Offline First'] },
   { category: 'Databases', items: ['PostgreSQL', 'Neon', 'SQLite', 'Redis'] },
   { category: 'DevOps',    items: ['Docker', 'GitHub Actions', 'Netlify', 'Vercel', 'Render', 'Cloudflare', 'Azure', 'AWS S3'] },
   { category: 'AI and ML', items: ['ACE Step', 'SDXL', 'Qwen', 'Gemma', 'Whisper ASR', 'GPT-3.5 and GPT-4', 'Llama 3', 'Modal GPU', 'Inngest', 'LangChain', 'Hugging Face'] },
@@ -127,7 +127,7 @@ export const projects = [
     title: 'SautiForge',
     description:
       'Offline first Android application for collecting and managing consented, pseudonymous speech research data. It keeps projects, participants, sessions, scenarios, recordings, transcripts, and annotations separate for rigorous low resource language fieldwork.',
-    tech: ['Android', 'Offline First', 'Speech Data', 'Research', 'Consent', 'Annotation'],
+    tech: ['React Native', 'Expo SDK 57', 'TypeScript', 'Expo Router', 'Expo SQLite', 'Zod', 'GitHub Actions'],
     live: null,
     github: 'https://github.com/Ashuza11/SautiForge',
     highlight: 'Version 0.1 · Kingwana pilot in Bukavu',
@@ -213,7 +213,7 @@ export const experience = [
     id: 1,
     role: 'Full Stack AI Engineer (Consultant)',
     org: 'AIAM Initiative, MIND Institute and University of the Witwatersrand',
-    period: 'Nov 2025 to Present',
+    period: 'Nov 2025 to Jul 2026',
     location: 'Remote',
     description:
       'Built Bina.ai end to end with dual Modal GPU backends, a Whisper ASR pipeline, a Next.js 15 frontend, and GitHub Actions for continuous delivery.',
@@ -233,7 +233,7 @@ export const experience = [
     id: 3,
     role: 'Digital Transformation Consultant and Full Stack Developer',
     org: 'CirFarm',
-    period: 'Jan 2023 to Present',
+    period: 'Jan 2023 to 2025',
     location: 'Bukavu, DRC',
     description:
       'End to end web development for an agricultural SME: schema design, REST APIs, React frontend, Figma designs, and deployment.',

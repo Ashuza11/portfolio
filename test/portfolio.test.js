@@ -52,11 +52,19 @@ test('skills and community stats reflect the current portfolio', () => {
   const mobile = skills.find(group => group.category === 'Mobile').items
   const ai = skills.find(group => group.category === 'AI and ML').items
   const devops = skills.find(group => group.category === 'DevOps').items
-  assert.ok(mobile.includes('React Native (Planned)'))
+  assert.ok(mobile.includes('React Native'))
+  assert.ok(mobile.includes('Expo'))
   assert.ok(!mobile.includes('Flutter'))
   for (const skill of ['ACE Step', 'SDXL', 'Qwen', 'Gemma', 'Whisper ASR']) assert.ok(ai.includes(skill))
   for (const skill of ['Vercel', 'Cloudflare']) assert.ok(devops.includes(skill))
   assert.ok(personal.stats.some(stat => stat.label === 'Communities Established' && stat.value === 3))
+})
+
+test('SautiForge reflects its implemented mobile stack', () => {
+  const sautiforge = projects.find(project => project.title === 'SautiForge')
+  for (const technology of ['React Native', 'Expo SDK 57', 'TypeScript', 'Expo Router', 'Expo SQLite', 'Zod', 'GitHub Actions']) {
+    assert.ok(sautiforge.tech.includes(technology))
+  }
 })
 
 test('community platform profiles are available', () => {

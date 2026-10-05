@@ -39,7 +39,7 @@ export default function Navbar({ theme, onToggleTheme }) {
       <div className="container navbar-inner">
         <Link to="/" className="navbar-logo">
           <span className="mono accent">ash</span>
-          <span className="mono" style={{ color: 'var(--text-2)' }}>.dev</span>
+          <span className="mono" style={{ color: 'var(--text-2)' }}>.ing</span>
         </Link>
 
         <ul id="primary-navigation" className={`navbar-links${open ? ' open' : ''}`}>

@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <span className="mono accent">ash.dev</span>
+        <span className="mono accent">ash.ing</span>
         <span className="footer-copy">© {new Date().getFullYear()} {personal.name}</span>
         <div className="footer-links">
           <Link to="/projects">Projects</Link>
