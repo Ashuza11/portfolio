@@ -40,6 +40,14 @@ test('experience highlights have complete content and links', () => {
   }
 })
 
+test('Indaba is completed and Kingwana research is ongoing', () => {
+  const indaba = highlights.find(item => item.id === 'indaba-2026')
+  const kingwana = highlights.find(item => item.id === 'kingwana-small-businesses')
+  assert.equal(indaba.group, 'Completed')
+  assert.equal(kingwana.group, 'Now')
+  assert.equal(kingwana.kind, 'Ongoing research')
+})
+
 test('skills and community stats reflect the current portfolio', () => {
   const mobile = skills.find(group => group.category === 'Mobile').items
   const ai = skills.find(group => group.category === 'AI and ML').items

@@ -45,7 +45,7 @@ export default function ExperiencePage() {
           </div>
         </section>
 
-        {['Challenges and recognition', 'Research and writing'].map(group => (
+        {['Completed', 'Challenges and recognition', 'Research and writing'].map(group => (
           <section className="highlights-section" aria-labelledby={`${group.replaceAll(' ', '').toLowerCase()}-title`} key={group}>
             <div className="experience-section-head">
               <p className="section-label">Selected highlights</p>

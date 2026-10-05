@@ -5,6 +5,7 @@ import './ProjectsPage.css'
 const FILTERS = [
   { value: 'All', label: 'All projects' },
   { value: 'AI', label: 'AI systems' },
+  { value: 'Research', label: 'Research' },
   { value: 'Full Stack', label: 'Full stack' },
 ]
 
